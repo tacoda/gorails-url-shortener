@@ -52,3 +52,9 @@ r test test/models/base62_test.rb
 ```sh
 r test test/models/short_code_test.rb
 ```
+
+## Base62 Decoding
+
+- Reverse expectations for test
+- Implement model changes to make the test pass
+
