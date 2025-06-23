@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_23_140001) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_23_180528) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -19,8 +19,19 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_23_140001) do
     t.string "title"
     t.string "description"
     t.string "image"
-    t.integer "views_count"
+    t.integer "views_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "views", force: :cascade do |t|
+    t.bigint "link_id", null: false
+    t.string "user_agent"
+    t.string "ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["link_id"], name: "index_views_on_link_id"
+  end
+
+  add_foreign_key "views", "links"
 end

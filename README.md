@@ -71,3 +71,31 @@ r test test/models/short_code_test.rb
 - Add show action
 - Grab external link icon from heroicons
 - Add link to link partial
+
+## View Charts for Links
+
+```sh
+bundle add chartkick groupdate
+```
+
+- Add importmap config
+- Add imports to `javascript/application.js`
+
+```sh
+bin/dev
+```
+
+- Add chart to link show view
+- Add view model
+
+```sh
+r g model View link:belongs_to user_agent ip
+r db:migrate
+```
+
+- Add association to Link
+- Add counter cache to association in View
+- Track the view in the view show action
+- Add views count to link partial
+- Update api call for chart
+
