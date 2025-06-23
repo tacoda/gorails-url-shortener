@@ -58,3 +58,8 @@ r test test/models/short_code_test.rb
 - Reverse expectations for test
 - Implement model changes to make the test pass
 
+## Find link by ShortCode
+
+- Override `Link#to_param` to use `ShortCode`
+- Add show action and view
+- Override `Link.find` to use `ShortCode`
