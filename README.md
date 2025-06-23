@@ -13,6 +13,7 @@ r new gorails-url-shortener -d postgresql --css tailwind
 ```sh
 r g model Link url title description image views_count:integer
 r db:migrate
+```
 
 - Add links resource routes
 - Add root route
