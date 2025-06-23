@@ -22,7 +22,6 @@ r db:migrate
 ```sh
 bin/dev
 ```
-```
 
 - Add typography import to `tailwind/application.css`
 - Update layout view
