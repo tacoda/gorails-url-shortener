@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@layer components {
+  input {
+    @apply bg-white p-2 rounded;
+  }
+}
