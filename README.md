@@ -8,7 +8,7 @@
 r new gorails-url-shortener -d postgresql --css tailwind
 ```
 
-## Adding Initial Models
+## Add Link Model
 
 ```sh
 r g model Link url title description image views_count:integer
@@ -35,3 +35,20 @@ bin/dev
 - Update index to get links by created_at desc
 - Refactor into a scope
 - Add link partial
+
+## Base62 Encoding
+
+- Add base62 model
+- Add tests for new model
+
+```sh
+r db:create
+r test test/models/base62_test.rb
+```
+
+- Make tests pass
+- Refactor base62 class to shortcode
+
+```sh
+r test test/models/short_code_test.rb
+```
