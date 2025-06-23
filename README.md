@@ -63,3 +63,11 @@ r test test/models/short_code_test.rb
 - Override `Link#to_param` to use `ShortCode`
 - Add show action and view
 - Override `Link.find` to use `ShortCode`
+
+## Short URL Link Redirects
+
+- Add views show route
+- Add views controller
+- Add show action
+- Grab external link icon from heroicons
+- Add link to link partial
