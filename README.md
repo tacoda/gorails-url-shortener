@@ -99,3 +99,21 @@ r db:migrate
 - Add views count to link partial
 - Update api call for chart
 
+## Improving link designs
+
+- Add edit link to show view
+- Add edit, update, and destroy actions to links controller
+- Add these actions to before_action call too
+- Create edit view
+- Create form partial and use it in index and edit views
+- Add cancel link and delete button to edit page
+- Implement update and delete actions
+- Add rescue_from in views controller to handle link not found
+- Add notice and alert to layout view
+- Add back link on show page
+- Style the link partial
+- Update style on the show page
+- Add image tag for favicon to link partial
+- Add domain method to Link model
+- Add favicon to view show page also
+- Add favicon helper to refactor
