@@ -117,3 +117,24 @@ r db:migrate
 - Add domain method to Link model
 - Add favicon to view show page also
 - Add favicon helper to refactor
+
+## Retrieving Link Metadata
+
+- Add after_save_commit callback to Link model
+- Create MetadataJob
+- Create Metadata model
+- Add Metadata test
+
+```sh
+r test test/models/metadata_test.rb
+```
+
+Useful documentation: https://ogp.me
+
+- Update link partial view
+- Add turbo stream for link partial
+- Update job to use turbo stream
+- Add respond_to to link create action for turbo stream
+- Clear out form input after submission
+  - First method is using turbo stream to replace the link_form
+  - Second method is using a Stimulus controller here
