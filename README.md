@@ -138,3 +138,19 @@ Useful documentation: https://ogp.me
 - Clear out form input after submission
   - First method is using turbo stream to replace the link_form
   - Second method is using a Stimulus controller here
+
+## Copy Link to Clipboard
+
+Using https://clipboardjs.com and https://atomiks.github.io/tippyjs/
+
+- Add tippy production cdn links to application layout
+- Add clipboard using npm (via rails binary)
+
+```sh
+bin/importmap pin clipboard
+```
+
+- Rename hello_controller stimulus controller to clipboard_controller
+- Add implementation to stimulus controller
+- Update link partial to use a button and call the controller
+- Copy button to view show page
