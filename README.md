@@ -154,3 +154,29 @@ bin/importmap pin clipboard
 - Add implementation to stimulus controller
 - Update link partial to use a button and call the controller
 - Copy button to view show page
+
+## Deploy to Production
+
+To change database:
+
+```sh
+r db:system:change --to=postgresql
+```
+
+To lock the bundle for linux:
+
+```sh
+bundle lock --add-platform x86_64-linux
+```
+
+```sh
+fly launch
+```
+
+If background jobs don't work, install the Sucker Punch gem to run the jobs in the same process
+
+```sh
+bundle add sucker_punch
+```
+
+- Add sucker_punch queue adapter in `config/application.rb`

@@ -66,3 +66,7 @@ end
 
 gem "chartkick", "~> 5.2"
 gem "groupdate", "~> 6.7"
+
+gem "dockerfile-rails", ">= 1.7", group: :development
+
+gem "sucker_punch", "~> 3.2"

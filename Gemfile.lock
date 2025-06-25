@@ -102,6 +102,8 @@ GEM
     debug (1.11.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    dockerfile-rails (1.7.9)
+      rails (>= 3.0.0)
     dotenv (3.1.8)
     drb (2.2.3)
     ed25519 (1.4.0)
@@ -319,6 +321,8 @@ GEM
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.7)
+    sucker_punch (3.2.0)
+      concurrent-ruby (~> 1.0)
     tailwindcss-rails (4.2.3)
       railties (>= 7.0.0)
       tailwindcss-ruby (~> 4.0)
@@ -375,6 +379,7 @@ DEPENDENCIES
   capybara
   chartkick (~> 5.2)
   debug
+  dockerfile-rails (>= 1.7)
   groupdate (~> 6.7)
   importmap-rails
   jbuilder
@@ -389,6 +394,7 @@ DEPENDENCIES
   solid_cache
   solid_queue
   stimulus-rails
+  sucker_punch (~> 3.2)
   tailwindcss-rails
   thruster
   turbo-rails
