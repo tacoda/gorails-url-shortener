@@ -180,3 +180,9 @@ bundle add sucker_punch
 ```
 
 - Add sucker_punch queue adapter in `config/application.rb`
+
+Deploy again
+
+```sh
+fly deploy
+```
