@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: [:show, :edit, :update, :destroy]
-  before_action :check_if_editable, only: [:edit, :update, :destroy]
+  before_action :set_link, only: [ :show, :edit, :update, :destroy ]
+  before_action :check_if_editable, only: [ :edit, :update, :destroy ]
 
   def index
     @links = Link.recent_first
@@ -16,7 +16,7 @@ class LinksController < ApplicationController
       respond_to do |format|
         format.html { redirect_to root_path }
         format.turbo_stream { render turbo_stream: [
-          turbo_stream.prepend("links", @link),
+          turbo_stream.prepend("links", @link)
           # turbo_stream.replace("link_form", partial: "links/form", locals: { link: Link.new })
         ]
         }

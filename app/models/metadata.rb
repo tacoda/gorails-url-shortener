@@ -9,7 +9,7 @@ class Metadata
     new
   end
 
-  def initialize(html=nil)
+  def initialize(html = nil)
     @doc = Nokogiri::HTML(html)
   end
 
