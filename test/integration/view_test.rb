@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ViewTest < ActionDispatch::IntegrationTest
+class ViewsIntegrationTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   test "visiting a link records a view" do

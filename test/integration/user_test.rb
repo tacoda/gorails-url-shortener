@@ -1,6 +1,6 @@
 require "test_helper"
 
-class UserTest < ActionDispatch::IntegrationTest
+class UsersIntegrationTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   test "guest user" do

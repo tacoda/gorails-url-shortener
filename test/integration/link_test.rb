@@ -1,6 +1,6 @@
 require "test_helper"
 
-class LinkTest < ActionDispatch::IntegrationTest
+class LinksIntegrationTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   test "links index" do
