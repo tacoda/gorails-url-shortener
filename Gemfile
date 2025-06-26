@@ -62,8 +62,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  # Use sqlite3 for faster test database
-  gem "sqlite3", "~> 2.0"
 end
 
 gem "chartkick", "~> 5.2"
