@@ -186,3 +186,24 @@ Deploy again
 ```sh
 fly deploy
 ```
+
+## Add Users
+
+```sh
+bundle add devise
+r g devise:install
+# Add default url options for development
+r g devise User
+r db:migrate
+r g migration AddUserIdToLinks user_id:integer
+r db:migrate
+```
+
+- Add optional relation to Link model
+- Add relation to User model
+- Update link index page to add nav links
+- Move new markup to `layout/application` view
+- Add user to link in links controller create action
+- Add helper methods to Link model
+- Add before_action to Link controller to use this new helper method
+- Update link show page to display edit link only when appropriate
