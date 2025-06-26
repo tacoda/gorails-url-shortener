@@ -227,3 +227,4 @@ r g integration_test link
 ```sh
 r test test/integration/link_test.rb
 ```
+
