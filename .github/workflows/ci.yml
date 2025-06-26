@@ -7,6 +7,7 @@ on:
 
 jobs:
   lint:
+    name: Lint code
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -22,6 +23,7 @@ jobs:
         run: bin/rubocop -f github
 
   scan_ruby:
+    name: Scan Ruby vulnerabilities
     runs-on: ubuntu-latest
     needs: lint
     steps:
@@ -38,6 +40,7 @@ jobs:
         run: bin/brakeman --no-pager
 
   scan_js:
+    name: Scan JS vulnerabilities
     runs-on: ubuntu-latest
     needs: lint
     steps:
@@ -54,6 +57,7 @@ jobs:
         run: bin/importmap audit
 
   test:
+    name: Run tests
     runs-on: ubuntu-latest
     needs: [lint, scan_ruby, scan_js]
     steps:
