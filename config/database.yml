@@ -90,14 +90,59 @@ production:
     <<: *primary_production
     database: gorails_url_shortener_production_cache
     migrations_paths: db/cache_migrate
-    url: <%= ENV["DATABASE_URL"] ? URI.parse(ENV["DATABASE_URL"]).tap { |uri| uri.path = (uri.path || '/') + '_cache' } : nil %>
+    url: <%= 
+      if ENV["DATABASE_URL"]
+        begin
+          uri = URI.parse(ENV["DATABASE_URL"])
+          # Ensure we have a valid path to work with
+          current_path = uri.path.to_s
+          current_path = '/gorails_url_shortener_production' if current_path.empty? || current_path == '/'
+          uri.path = current_path + '_cache'
+          uri.to_s
+        rescue URI::InvalidURIError => e
+          nil
+        end
+      else
+        nil
+      end
+    %>
   queue:
     <<: *primary_production
     database: gorails_url_shortener_production_queue
     migrations_paths: db/queue_migrate
-    url: <%= ENV["DATABASE_URL"] ? URI.parse(ENV["DATABASE_URL"]).tap { |uri| uri.path = (uri.path || '/') + '_queue' } : nil %>
+    url: <%= 
+      if ENV["DATABASE_URL"]
+        begin
+          uri = URI.parse(ENV["DATABASE_URL"])
+          # Ensure we have a valid path to work with
+          current_path = uri.path.to_s
+          current_path = '/gorails_url_shortener_production' if current_path.empty? || current_path == '/'
+          uri.path = current_path + '_queue'
+          uri.to_s
+        rescue URI::InvalidURIError => e
+          nil
+        end
+      else
+        nil
+      end
+    %>
   cable:
     <<: *primary_production
     database: gorails_url_shortener_production_cable
     migrations_paths: db/cable_migrate
-    url: <%= ENV["DATABASE_URL"] ? URI.parse(ENV["DATABASE_URL"]).tap { |uri| uri.path = (uri.path || '/') + '_cable' } : nil %>
+    url: <%= 
+      if ENV["DATABASE_URL"]
+        begin
+          uri = URI.parse(ENV["DATABASE_URL"])
+          # Ensure we have a valid path to work with
+          current_path = uri.path.to_s
+          current_path = '/gorails_url_shortener_production' if current_path.empty? || current_path == '/'
+          uri.path = current_path + '_cable'
+          uri.to_s
+        rescue URI::InvalidURIError => e
+          nil
+        end
+      else
+        nil
+      end
+    %>
