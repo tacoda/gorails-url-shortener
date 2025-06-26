@@ -5,7 +5,7 @@ class ShortCode
   def self.encode(number)
     return ALPHABET.first if number.zero? || number.nil?
 
-    result = ""
+    result = String.new
 
     while number > 0
       index = number % BASE

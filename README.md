@@ -207,3 +207,23 @@ r db:migrate
 - Add helper methods to Link model
 - Add before_action to Link controller to use this new helper method
 - Update link show page to display edit link only when appropriate
+
+## Add Link Integration Tests
+
+- Add user fixture
+- Add link fixtures
+
+List options for generators
+
+```sh
+r g -h
+r g integration_test link
+```
+
+- Add tests to `test/integration/link_test.rb`
+- Refactor Link lookup to use custom method instead of overriding find
+- Add `user_test.rb`
+
+```sh
+r test test/integration/link_test.rb
+```
