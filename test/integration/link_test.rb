@@ -9,7 +9,7 @@ class LinksIntegrationTest < ActionDispatch::IntegrationTest
   end
 
   test "links index pagination" do
-    50.times { Link.create!(url: "https://example.com") }
+    21.times { Link.create!(url: "https://example.com") }
     get links_path
     assert_response :ok
     assert_select "a", "<"
