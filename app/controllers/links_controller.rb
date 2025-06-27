@@ -1,10 +1,14 @@
 class LinksController < ApplicationController
+  include Pagy::Backend
+
   before_action :set_link, only: [ :show, :edit, :update, :destroy ]
   before_action :check_if_editable, only: [ :edit, :update, :destroy ]
 
   def index
-    @links = Link.recent_first
+    @pagy, @links = pagy(Link.recent_first)
     @link ||= Link.new
+  rescue Pagy::OverflowError
+    redirect_to root_path
   end
 
   def show
@@ -22,7 +26,7 @@ class LinksController < ApplicationController
         }
       end
     else
-      @links = Link.recent_first
+      @pagy, @links = pagy(Link.recent_first)
       render :index, status: :unprocessable_entity
     end
   end

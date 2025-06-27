@@ -228,3 +228,31 @@ r g integration_test link
 r test test/integration/link_test.rb
 ```
 
+## Adding Pagination
+
+Create a bunch of links to work with
+
+```sh
+r c
+```
+
+```ruby
+100.times { Link.create!(url: "https://example.com") }
+```
+
+```sh
+bundle add pagy
+```
+
+- Include `Pagy::Backend` in Links Controller
+- Include `Pagy::Frontend` in `application_helper.rb`
+- Update Link Controller index action to use pagy
+- Add pagy nav to index view
+- Add styling to pagy nav
+
+```sh
+r test
+```
+
+- Add rescue for overflow error
+- Fix test failures and errors
