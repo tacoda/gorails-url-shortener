@@ -73,4 +73,4 @@ gem "sucker_punch", "~> 3.2"
 
 gem "devise", "~> 4.9"
 
-gem "pagy", "~> 9.3"
+gem "pagy", "~> 9.4"
